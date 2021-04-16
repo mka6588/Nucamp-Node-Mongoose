@@ -12,12 +12,10 @@ connect.then(() => {
 
     console.log('Connected correctly to server');
 
-    const newCampsite = Campsite({
+    Campsite.create({
         name: 'React Lake Campground',
         description: 'test'
-    });
-
-    newCampsite.save()
+    })
         .then(campsite => {
             console.log(campsite);
             return Campsite.find();
